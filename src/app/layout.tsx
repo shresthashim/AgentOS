@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Splash } from "@/components/splash";
 import { ThemeProvider } from "@/components/theme";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 // Headlines in Schibsted Grotesk; reading text in DM Sans, the AgentOS app's own face.
@@ -20,20 +21,8 @@ const body = localFont({
   display: "swap",
 });
 
-const description =
-  "Automate reports and routine work across Gmail, Google Sheets, Slack and Notion. Review actions like sending email before they run.";
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agentos-home.vercel.app"),
-  alternates: { canonical: "/" },
-  title: "AgentOS: Automate the work between your apps",
-  description,
-  openGraph: {
-    url: "/",
-    title: "AgentOS: Automate the work between your apps",
-    description,
-    type: "website",
-  },
+  metadataBase: new URL(SITE_URL),
 };
 
 export const viewport: Viewport = {
