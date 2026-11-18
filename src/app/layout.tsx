@@ -26,11 +26,11 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL("https://agentos-home.vercel.app"),
   alternates: { canonical: "/" },
-  title: "AgentOS: automate the work between your apps",
+  title: "AgentOS: Automate the work between your apps",
   description,
   openGraph: {
     url: "/",
-    title: "AgentOS: automate the work between your apps",
+    title: "AgentOS: Automate the work between your apps",
     description,
     type: "website",
   },
