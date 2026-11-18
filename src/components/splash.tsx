@@ -1,7 +1,10 @@
+import type { CSSProperties } from "react";
+
 /**
  * The opening moment: the AgentOS mark is itself a tiny workflow (a start node,
  * a route, a hand-off and an approval ring), so it draws itself in that order,
- * the name rises in, a wire fills as the page loads, and the screen lifts away.
+ * the name rises in, a five-step run completes as the page loads, and the
+ * screen lifts away.
  *
  * Plain server-rendered markup and CSS, so it appears on the very first paint,
  * before any JavaScript. A small inline script decides whether to show it (once
@@ -20,8 +23,8 @@ const SCRIPT = `(() => {
   const finish = () => {
     if (finished) return; finished = true;
     root.classList.add("splash-loaded");
-    setTimeout(() => { root.classList.add("splash-out"); root.classList.remove("splash-on"); }, 260);
-    setTimeout(() => root.classList.add("splash-skip"), 1100);
+    setTimeout(() => { root.classList.add("splash-out"); root.classList.remove("splash-on"); }, 720);
+    setTimeout(() => root.classList.add("splash-skip"), 1560);
   };
   const ready = () => setTimeout(finish, Math.max(0, MIN - (performance.now() - start)));
   if (document.readyState === "complete") ready(); else addEventListener("load", ready, { once: true });
@@ -39,28 +42,60 @@ export function Splash() {
       </noscript>
       <div className="splash" aria-hidden="true">
         <div className="splash-stage">
-          <span className="splash-tile">
-            <svg viewBox="0 0 24 24" className="splash-mark">
-              {/* Route: start node → bend → approval ring. */}
-              <path className="splash-route" d="M5 16h7.5L17 8" pathLength={1} />
-              {/* Hand-off: the dashed line that keeps flowing. */}
-              <path className="splash-handoff" d="M12.5 16H19" />
-              <circle className="splash-node" cx="5" cy="16" r="2.75" />
-              <circle className="splash-ring" cx="17.6" cy="7" r="2.6" pathLength={1} />
-            </svg>
-            <span className="splash-pulse" />
-          </span>
-          <span className="splash-name">
-            {LETTERS.map((letter, i) => (
-              <span key={i} style={{ animationDelay: `${0.62 + i * 0.045}s` }}>
-                {letter}
-              </span>
+          <div className="splash-lockup">
+            <span className="splash-tile">
+              <svg viewBox="0 0 24 24" className="splash-mark">
+                {/* Route: start node → bend → approval ring. */}
+                <path
+                  className="splash-route"
+                  d="M5 16h7.5L17 8"
+                  pathLength={1}
+                />
+                {/* Hand-off: the dashed line that keeps flowing. */}
+                <path className="splash-handoff" d="M12.5 16H19" />
+                <circle className="splash-node" cx="5" cy="16" r="2.75" />
+                <circle
+                  className="splash-ring"
+                  cx="17.6"
+                  cy="7"
+                  r="2.6"
+                  pathLength={1}
+                />
+              </svg>
+              <span className="splash-pulse" />
+            </span>
+            <span className="splash-name">
+              {LETTERS.map((letter, i) => (
+                <span
+                  key={i}
+                  style={{ animationDelay: `${0.62 + i * 0.045}s` }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </span>
+          </div>
+          <span className="splash-run">
+            <span className="splash-run-line" />
+            <span className="splash-run-fill" />
+            {[0, 1, 2, 3].map((i) => (
+              <span
+                key={i}
+                className="splash-run-node"
+                style={{ "--i": i } as CSSProperties}
+              />
             ))}
+            <span
+              className="splash-run-node is-last"
+              style={{ "--i": 4 } as CSSProperties}
+            >
+              <svg viewBox="0 0 12 12">
+                <path d="M3 6.3l2 2 4-4.3" pathLength={1} />
+              </svg>
+            </span>
+            <span className="splash-run-pulse" />
           </span>
         </div>
-        <span className="splash-wire">
-          <span />
-        </span>
       </div>
     </>
   );

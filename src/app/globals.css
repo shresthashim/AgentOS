@@ -312,6 +312,10 @@ html.splash-out .splash {
 }
 .splash-stage {
   display: flex;
+  flex-direction: column;
+}
+.splash-lockup {
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
@@ -439,39 +443,177 @@ html.splash-out .splash-stage {
   }
 }
 
-/* Progress: creeps toward the end while loading, completes on load. */
-.splash-wire {
-  position: absolute;
-  bottom: 18%;
-  left: 50%;
-  width: min(14rem, 50vw);
-  height: 2px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: var(--line);
-  transform: translateX(-50%);
+/* The run: five steps under the name. A pulse travels between them and each
+   lights as it passes; the last step waits on the dashed hand-off line until the
+   page has loaded, then closes with a check. */
+.splash-run {
+  position: relative;
+  height: 1rem;
+  margin: 2.25rem 0.5rem 0;
   opacity: 0;
-  animation: splash-fade 0.4s 0.5s forwards;
+  animation: splash-fade 0.35s 0.4s forwards;
 }
-.splash-wire span {
-  display: block;
-  height: 100%;
-  width: 100%;
-  border-radius: inherit;
+.splash-run-line,
+.splash-run-fill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 999px;
+}
+.splash-run-line {
+  background: repeating-linear-gradient(90deg, var(--line-strong) 0 4px, transparent 4px 9px);
+  background-size: 9px 2px;
+  animation: splash-dash 0.6s linear infinite;
+}
+@keyframes splash-dash {
+  to {
+    background-position: 9px 0;
+  }
+}
+.splash-run-fill {
   background: var(--cobalt);
   transform: scaleX(0);
   transform-origin: left;
-  animation: splash-progress 2.4s 0.5s cubic-bezier(0.1, 0.6, 0.3, 1) forwards;
+  animation: splash-run-fill 1.05s 0.45s forwards;
 }
-@keyframes splash-progress {
-  to {
-    transform: scaleX(0.82);
+@keyframes splash-run-fill {
+  0% {
+    transform: scaleX(0);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.3, 1);
+  }
+  33.33% {
+    transform: scaleX(0.25);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.3, 1);
+  }
+  66.66% {
+    transform: scaleX(0.5);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.3, 1);
+  }
+  100% {
+    transform: scaleX(0.75);
   }
 }
-html.splash-loaded .splash-wire span {
-  transform: scaleX(1);
-  transition: transform 0.25s ease-out;
+.splash-run-node {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--i) * 25%);
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--canvas);
+  transform: translate(-50%, -50%);
+  animation: splash-run-node 0.35s calc(0.45s + var(--i) * 0.35s) cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes splash-run-node {
+  50% {
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+  to {
+    border-color: var(--cobalt);
+    background: var(--cobalt);
+  }
+}
+/* The last step is the approval ring from the mark. */
+.splash-run-node.is-last {
+  display: grid;
+  width: 1rem;
+  height: 1rem;
+  place-items: center;
+  color: #fff;
   animation: none;
+}
+.splash-run-node.is-last svg {
+  width: 0.625rem;
+  height: 0.625rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.splash-run-pulse {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 999px;
+  background: var(--cobalt);
+  box-shadow: 0 0 0 4px var(--cobalt-tint);
+  transform: translate(-50%, -50%);
+  animation:
+    splash-run-pulse 1.05s 0.45s forwards,
+    splash-breathe 1.1s 1.5s ease-in-out infinite;
+}
+@keyframes splash-run-pulse {
+  0% {
+    left: 0%;
+    animation-timing-function: cubic-bezier(0.6, 0, 0.3, 1);
+  }
+  33.33% {
+    left: 25%;
+    animation-timing-function: cubic-bezier(0.6, 0, 0.3, 1);
+  }
+  66.66% {
+    left: 50%;
+    animation-timing-function: cubic-bezier(0.6, 0, 0.3, 1);
+  }
+  100% {
+    left: 75%;
+  }
+}
+@keyframes splash-breathe {
+  50% {
+    box-shadow: 0 0 0 7px var(--cobalt-tint);
+  }
+}
+
+/* Loaded: run the last segment, approve the last step. */
+html.splash-loaded .splash-run-fill {
+  animation: splash-run-finish 0.3s cubic-bezier(0.6, 0, 0.3, 1) forwards;
+}
+@keyframes splash-run-finish {
+  from {
+    transform: scaleX(0.75);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+html.splash-loaded .splash-run-pulse {
+  animation: splash-run-pulse-finish 0.3s cubic-bezier(0.6, 0, 0.3, 1) forwards;
+}
+@keyframes splash-run-pulse-finish {
+  from {
+    left: 75%;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+html.splash-loaded .splash-run-node.is-last {
+  animation: splash-run-approve 0.4s 0.24s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes splash-run-approve {
+  50% {
+    transform: translate(-50%, -50%) scale(1.35);
+  }
+  to {
+    border-color: var(--cobalt);
+    background: var(--cobalt);
+    box-shadow: 0 0 0 5px var(--cobalt-tint);
+  }
+}
+html.splash-loaded .splash-run-node.is-last svg {
+  animation: splash-draw 0.25s 0.38s ease-out forwards;
 }
 
 /* Safety net: if the dismiss script never runs, the splash still clears. */
