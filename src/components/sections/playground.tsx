@@ -162,7 +162,7 @@ export function Playground() {
           ? "Running…"
           : actionIds.length === 0
             ? "Pick at least one thing to do."
-            : "Ready. Press Test run to try it.";
+            : "Ready to run.";
   const statusDot =
     phase === "waiting" ? "bg-wait" : phase === "done" ? "bg-done" : phase === "running" ? "bg-cobalt" : "bg-line-strong";
 
@@ -208,7 +208,9 @@ export function Playground() {
                 disabled={busy || actionIds.length === 0}
                 className="inline-flex h-9 items-center gap-1.5 rounded-xl bg-cobalt px-4 text-sm font-semibold text-white transition-colors hover:bg-cobalt-hover disabled:opacity-50"
               >
-                <Play size={15} aria-hidden="true" /> Test run
+                <Play size={15} aria-hidden="true" />
+                <span className="sm:hidden">Run</span>
+                <span className="hidden sm:inline">Test run</span>
               </button>
             </div>
           </div>
