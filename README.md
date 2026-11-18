@@ -16,7 +16,7 @@
   &nbsp;·&nbsp;
   <a href="https://agentos-home.vercel.app/#try"><strong>Try the workflow playground</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://agentos-console.vercel.app">Open the console</a>
+  <a href="https://agentos-workspace.vercel.app">Open the console</a>
 </p>
 
 ## Inside AgentOS
@@ -99,7 +99,7 @@ npm ci
 npm run dev -- --port 3400
 ```
 
-Open [localhost:3400](http://localhost:3400). Console links default to `https://agentos-console.vercel.app`. To point them somewhere else, copy [`.env.example`](.env.example) to `.env.local` and set `NEXT_PUBLIC_APP_URL` before starting the dev server or building the site.
+Open [localhost:3400](http://localhost:3400). Console links default to `https://agentos-workspace.vercel.app`. To point them somewhere else, copy [`.env.example`](.env.example) to `.env.local` and set `NEXT_PUBLIC_APP_URL` before starting the dev server or building the site.
 
 ```bash
 npm run lint
