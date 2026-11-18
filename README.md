@@ -1,26 +1,59 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/agentos.svg" alt="AgentOS logo" width="88" height="88" />
+</p>
+
 <h1 align="center">AgentOS</h1>
 
-<p align="center"><strong>Turn recurring work into workflows your team can run and trace.</strong></p>
+<p align="center"><strong>Build workflows that handle the work you repeat.</strong></p>
 
 <p align="center">
-  Pull sales from a spreadsheet, draft the weekly update, and send it through Gmail.<br />
-  Build the steps once, test with sample data, and see what happened on every run.
+  Turn spreadsheet rows, customer feedback, and meeting notes into reports, issues, and updates.<br />
+  Connect your apps, add AI where it helps, and track every run.
 </p>
 
 <p align="center">
   <a href="https://agentos.vercel.app"><strong>Explore AgentOS</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://agentos-app.vercel.app"><strong>Open the dashboard</strong></a>
+  <a href="https://agentos.vercel.app/#try"><strong>Try the workflow playground</strong></a>
   &nbsp;·&nbsp;
-  <a href="#run-locally">Run the site locally</a>
+  <a href="https://agentos-app.vercel.app">Open the dashboard</a>
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="public/images/tour/build-dark.webp" />
-    <img src="public/images/tour/build-light.webp" width="1080" alt="AgentOS workflow editor with a step-by-step canvas for a lead follow-up and the selected step's settings alongside it" />
-  </picture>
-</p>
+## Inside AgentOS
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/images/tour/build-dark.webp" />
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/images/tour/build-light.webp" width="1080" alt="AgentOS workflow editor with a lead follow-up canvas and step settings" />
+</picture>
+
+**Build visually.** Arrange steps on the canvas, map outputs into the next action, and test with sample data before publishing.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col" width="50%">Follow each run</th>
+      <th scope="col" width="50%">Review outgoing actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/images/tour/review-dark.webp" />
+          <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/images/tour/review-light.webp" width="510" alt="Run details with a step-by-step timeline and the finished follow-up email" />
+        </picture><br />
+        See which steps ran, where the workflow paused, and what it produced.
+      </td>
+      <td valign="top">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/images/tour/approve-dark.webp" />
+          <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/images/tour/approve-light.webp" width="510" alt="Approval screen showing a draft email and the available review actions" />
+        </picture><br />
+        Inspect the exact email, rows, or other details before approving a write.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## What you can automate
 
@@ -33,7 +66,19 @@
 
 Workflows can start on a schedule, through an authenticated webhook, or from supported Google Sheets changes. Use standard steps for calculations and filters, and add AI for tasks such as drafting or summarizing. Test before publishing and use run history to inspect individual steps. Actions that require approval pause for review before they run.
 
-**Integrations:** Gmail · Google Sheets · Google Calendar · Slack · Notion · GitHub · Todoist
+## Connected apps
+
+<p>
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/apps/gmail.svg" alt="Gmail" width="28" height="28" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/apps/googlesheets.svg" alt="Google Sheets" width="28" height="28" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/apps/googlecalendar.svg" alt="Google Calendar" width="28" height="28" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/apps/slack.svg" alt="Slack" width="28" height="28" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/apps/notion.svg" alt="Notion" width="28" height="28" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/apps/github.svg" alt="GitHub" width="28" height="28" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/shresthashim/AgentOS/main/public/apps/todoist.svg" alt="Todoist" width="28" height="28" />
+</p>
+
+Gmail · Google Sheets · Google Calendar · Slack · Notion · GitHub · Todoist
 
 ## Explore the site
 
@@ -41,7 +86,7 @@ Workflows can start on a schedule, through an authenticated webhook, or from sup
 - [**Product tour**](https://agentos.vercel.app/#tour) — see the workflow editor, approval screen, and run timeline.
 - [**Workflow templates**](https://agentos.vercel.app/#templates) — browse examples for support, sales, reporting, and operations.
 
-This repository contains the landing site and interactive demos. The workflow editor, API, worker, and deployment instructions live in the [AgentOS platform repository](https://github.com/shresthashim/agentos-platform).
+This repository contains the landing site and interactive demos. The workflow editor, API, worker, and deployment instructions live in the [AgentOS platform repository](https://github.com/shresthashim/agentos-platform) for contributors with access.
 
 ## Run locally
 
