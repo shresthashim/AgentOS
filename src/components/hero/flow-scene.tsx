@@ -177,8 +177,11 @@ function Scene({ steps, flowKey, reduced, dark }: Props) {
       clock.current = { t: 0, flow: flowKey };
       shown.current = 0;
     }
-    if (ready) shown.current += dt;
-    clock.current.t += ready ? dt : 0;
+    // Hold the entrance while the opening splash covers the page, so the cards
+    // rise in as it lifts away (see components/splash.tsx).
+    const live = ready && !document.documentElement.classList.contains("splash-on");
+    if (live) shown.current += dt;
+    clock.current.t += live ? dt : 0;
 
     // Gentle tilt toward the pointer.
     if (group.current) {
