@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "gmail",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gmail.svg",
+    "source_sha256": "a537f5d85d9a27efa3a5d6086e8df6072ee93f76b4d176639a5e483f74b74b9f"
+  },
+  {
+    "slug": "googlesheets",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/googlesheets.svg",
+    "source_sha256": "5f28308c62e37d7d5533f52bbff5b48dc8630189d1c9d9dcbd8d7821f50d877f"
+  },
+  {
+    "slug": "googlecalendar",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/googlecalendar.svg",
+    "source_sha256": "39b434d3264d123629a12509e9f5bdf57bf9e5ed9a6eafffb714cff5f05f032f"
+  },
+  {
+    "slug": "notion",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/notion.svg",
+    "source_sha256": "b17d2a2b592a06252efef522d5205f0c7a958f748d40df1011ed081417e42f85"
+  },
+  {
+    "slug": "github",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    "source_sha256": "3bf8cceead820aec50d4ee825a3fd02c5a1cd6665cc9cf4cbf3d9c8861a204bb"
+  },
+  {
+    "slug": "todoist",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/todoist.svg",
+    "source_sha256": "112b8e04327007cf75839bee7547718f334908c27700f9d5f5211062258510fe"
+  },
+  {
+    "slug": "slack",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/slack.svg",
+    "source_sha256": "f23c317b279f53dcd2260a6cd2e279f7a696f87dcb3da259d6201f05bbc45b0d"
+  }
+]
