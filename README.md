@@ -16,7 +16,7 @@
   &nbsp;·&nbsp;
   <a href="https://agentos-home.vercel.app/#try"><strong>Try the workflow playground</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://agentos-console.vercel.app">Open the dashboard</a>
+  <a href="https://agentos-console.vercel.app">Open the console</a>
 </p>
 
 ## Inside AgentOS
@@ -99,7 +99,7 @@ npm ci
 npm run dev -- --port 3400
 ```
 
-Open [localhost:3400](http://localhost:3400). Dashboard links default to `https://agentos-console.vercel.app`. To point them somewhere else, copy [`.env.example`](.env.example) to `.env.local` and set `NEXT_PUBLIC_APP_URL` before starting the dev server or building the site.
+Open [localhost:3400](http://localhost:3400). Console links default to `https://agentos-console.vercel.app`. To point them somewhere else, copy [`.env.example`](.env.example) to `.env.local` and set `NEXT_PUBLIC_APP_URL` before starting the dev server or building the site.
 
 ```bash
 npm run lint
@@ -116,7 +116,7 @@ npm run start -- --port 3400
 | [`src/app/`](src/app) | Page composition, metadata, styles, and self-hosted fonts |
 | [`src/components/hero/`](src/components/hero) | Interactive 3D workflow preview and its static fallback |
 | [`src/components/sections/`](src/components/sections) | Playground, product tour, templates, and other landing sections |
-| [`src/lib/site.ts`](src/lib/site.ts) | Dashboard URL, integration details, and example workflows |
+| [`src/lib/site.ts`](src/lib/site.ts) | Console URL, integration details, and example workflows |
 | [`public/`](public) | Integration icons and product tour images |
 
 The homepage is statically prerendered. The 3D preview loads in the browser and has a static fallback for devices without WebGL. Workflow tabs support arrow-key navigation, and the site respects system light, dark, and reduced-motion preferences.
