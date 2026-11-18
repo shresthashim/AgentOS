@@ -12,11 +12,11 @@
 </p>
 
 <p align="center">
-  <a href="https://agentos.vercel.app"><strong>Explore AgentOS</strong></a>
+  <a href="https://agentos-home.vercel.app"><strong>Explore AgentOS</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://agentos.vercel.app/#try"><strong>Try the workflow playground</strong></a>
+  <a href="https://agentos-home.vercel.app/#try"><strong>Try the workflow playground</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://agentos-app.vercel.app">Open the dashboard</a>
+  <a href="https://agentos-console.vercel.app">Open the dashboard</a>
 </p>
 
 ## Inside AgentOS
@@ -82,9 +82,9 @@ Gmail · Google Sheets · Google Calendar · Slack · Notion · GitHub · Todois
 
 ## Explore the site
 
-- [**Workflow playground**](https://agentos.vercel.app/#try) — choose a trigger and actions, then watch a simulated run.
-- [**Product tour**](https://agentos.vercel.app/#tour) — see the workflow editor, approval screen, and run timeline.
-- [**Workflow templates**](https://agentos.vercel.app/#templates) — browse examples for support, sales, reporting, and operations.
+- [**Workflow playground**](https://agentos-home.vercel.app/#try) — choose a trigger and actions, then watch a simulated run.
+- [**Product tour**](https://agentos-home.vercel.app/#tour) — see the workflow editor, approval screen, and run timeline.
+- [**Workflow templates**](https://agentos-home.vercel.app/#templates) — browse examples for support, sales, reporting, and operations.
 
 This repository contains the landing site and interactive demos. The workflow editor, API, worker, and deployment instructions live in the [AgentOS platform repository](https://github.com/shresthashim/agentos-platform) for contributors with access.
 
@@ -99,7 +99,7 @@ npm ci
 npm run dev -- --port 3400
 ```
 
-Open [localhost:3400](http://localhost:3400). Dashboard links default to `https://agentos-app.vercel.app`. To point them somewhere else, copy [`.env.example`](.env.example) to `.env.local` and set `NEXT_PUBLIC_APP_URL` before starting the dev server or building the site.
+Open [localhost:3400](http://localhost:3400). Dashboard links default to `https://agentos-console.vercel.app`. To point them somewhere else, copy [`.env.example`](.env.example) to `.env.local` and set `NEXT_PUBLIC_APP_URL` before starting the dev server or building the site.
 
 ```bash
 npm run lint

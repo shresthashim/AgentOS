@@ -24,7 +24,7 @@ const description =
   "Automate reports and routine work across Gmail, Google Sheets, Slack and Notion. Review actions like sending email before they run.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agentos.vercel.app"),
+  metadataBase: new URL("https://agentos-home.vercel.app"),
   alternates: { canonical: "/" },
   title: "AgentOS: automate the work between your apps",
   description,

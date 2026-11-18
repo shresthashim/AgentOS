@@ -1,6 +1,6 @@
 /** Dashboard entry point. Local previews can override NEXT_PUBLIC_APP_URL. */
 export const APP_URL = (
-  process.env.NEXT_PUBLIC_APP_URL || "https://agentos-app.vercel.app"
+  process.env.NEXT_PUBLIC_APP_URL || "https://agentos-console.vercel.app"
 ).replace(/\/$/, "");
 
 export type AppSlug =
