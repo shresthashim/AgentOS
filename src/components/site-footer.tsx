@@ -5,16 +5,16 @@ const GROUPS = [
   {
     title: "Product",
     links: [
-      { href: "#how", label: "How it works" },
-      { href: "#templates", label: "Templates" },
+      { href: "/#how", label: "How it works" },
+      { href: "/#templates", label: "Templates" },
     ],
   },
   {
     title: "Use cases",
     links: [
-      { href: "#teams", label: "Sales" },
-      { href: "#teams", label: "Operations" },
-      { href: "#teams", label: "Support" },
+      { href: "/#teams", label: "Sales" },
+      { href: "/#teams", label: "Operations" },
+      { href: "/#teams", label: "Support" },
     ],
   },
   {
@@ -22,7 +22,14 @@ const GROUPS = [
     links: [
       { href: APP_URL, label: "Sign in" },
       { href: APP_URL, label: "Get started" },
-      { href: "#faq", label: "FAQ" },
+      { href: "/#faq", label: "FAQ" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { href: "/privacy", label: "Privacy policy" },
+      { href: "/terms", label: "Terms of service" },
     ],
   },
 ];
@@ -30,7 +37,7 @@ const GROUPS = [
 export function SiteFooter() {
   return (
     <footer className="overflow-hidden border-t border-line bg-surface pb-20 md:pb-0">
-      <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.6fr)_repeat(3,minmax(0,1fr))]">
+      <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.6fr)_repeat(4,minmax(0,1fr))]">
         <div className="max-w-[24rem]">
           <Wordmark />
           <p className="mt-4 text-[15px] text-ink-muted">
