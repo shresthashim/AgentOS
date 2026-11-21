@@ -158,7 +158,7 @@ export const HERO_FLOWS: { id: string; name: string; steps: FlowStep[] }[] = [
  * Legal pages. Set a real, monitored address before publishing: Google's OAuth
  * review and data-protection law both expect a working contact.
  */
-export const CONTACT_EMAIL = "privacy@agentos.example";
+export const CONTACT_EMAIL = "agentos.workspace@gmail.com";
 export const LEGAL_UPDATED = "November 21, 2026";
 /** Governing law for the terms of service. Confirm before publishing. */
 export const GOVERNING_LAW = "Nepal";
